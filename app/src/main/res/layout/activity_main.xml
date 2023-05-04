@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -25,12 +26,25 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/mainTextview"
+        android:layout_width="320dp"
+        android:text="Ändra mig"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toTopOf="parent" /> />
+
+    <Button
+        android:id="@+id/openSecondButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Klicka för att ändra text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTextview"
+        app:layout_constraintVertical_bias="0.058" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

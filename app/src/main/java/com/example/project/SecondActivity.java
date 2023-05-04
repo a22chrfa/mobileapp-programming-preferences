@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         vSecondEditText = findViewById(R.id.secondEditText);
-        //Assigning vSaveButton and setting up an onClickListener to open mainactivty, and terminate current activity.
+        //Assigning vSaveButton and setting up an onClickListener to open main activity, and terminate current activity.
         vSaveButton = findViewById(R.id.save_button);
         vSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +37,6 @@ public class SecondActivity extends AppCompatActivity {
                 editor.putString("stringKey", text);
                 //apply to save changes to editor
                 editor.apply();
-
-                //Testing if sharedPref has stored the value correctly
-                String test = sharedPref.getString("stringKey", "");
-                Log.d("==>>", "Value: " + test);
 
                 Intent intent = new Intent(SecondActivity.this, MainActivity.class);
                 startActivity(intent);
